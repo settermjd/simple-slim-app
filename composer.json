@@ -1,0 +1,33 @@
+{
+    "name": "settermjd/simple-slim-app",
+    "description": "A small Slim app to demonstrate sending emails with GitHub Actions",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "Slim",
+        "GitHub",
+        "GitHub Actions",
+        "SendGrid",
+        "email"
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "homepage": "https://github.com/settermjd/simple-slim-app",
+    "require": {
+        "php": "~8.3.0 || ~8.4.0",
+        "slim/slim": "^4.15",
+        "slim/psr7": "^1.8",
+        "php-di/slim-bridge": "^3.4"
+    },
+    "scripts": {
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -S 0.0.0.0:8080 -t public/"
+        ]
+    },
+    "scripts-descriptions": {
+        "serve": "Starts the application using PHP's in-built webserver using the public directory as the document root"
+    }
+}
