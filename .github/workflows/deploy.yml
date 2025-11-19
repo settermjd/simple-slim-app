@@ -37,6 +37,7 @@ jobs:
       - uses: licenseware/send-email-notification@v1.2.0
         with:
           api-key: ${{ secrets.SENDGRID_API_KEY }}
+          region: global
           subject: App deployment successful
           from-email: ${{ vars.SENDER_EMAIL }}
           to-email: ${{ vars.RECIPIENT_EMAIL }}
