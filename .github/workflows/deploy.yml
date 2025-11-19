@@ -37,9 +37,9 @@ jobs:
       - name: Send HTML email with SendGrid
         uses: ajitmourya7/action-send-mail@0.0.1
         with:
-          sendgrid_api_key: "${{ secrets.SENDGRID_API_KEY }}"
-          from_email: "${{ vars.SENDER_EMAIL }}"
-          to_email: "${{ vars.RECIPIENT_EMAIL }}"
+          sendgrid_api_key: ${{ secrets.SENDGRID_API_KEY }}
+          from_email: ${{ vars.SENDER_EMAIL }}
+          to_email: ${{ vars.RECIPIENT_EMAIL }}
           subject: "App deployment successful"
           html_content: |
             <h1>The Slim PHP App Has Been Deployed!</h1>
