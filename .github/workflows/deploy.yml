@@ -34,14 +34,15 @@ jobs:
         # - name: Run test suite
         #   run: composer run-script test
 
-      - name: Send HTML email with SendGrid
-        uses: ajitmourya7/action-send-mail@0.0.1
+      - uses: licenseware/send-email-notification@v1.2.0
         with:
-          sendgrid_api_key: ${{ secrets.SENDGRID_API_KEY }}
-          from_email: ${{ vars.SENDER_EMAIL }}
-          to_email: ${{ vars.RECIPIENT_EMAIL }}
-          subject: "App deployment successful"
-          html_content: |
-            <h1>The Slim PHP App Has Been Deployed!</h1>
-            <p><a href="${{ vars.WEBSITE_URL }}">The latest version of the simple Slim PHP app</a> has been successfully deployed.</p>
-            <p>Sent by a custom GitHub Action using Twilio SendGrid.</p>
+          api-key: ${{ secrets.SENDGRID_API_KEY }}
+          subject: App deployment successful
+          from-email: ${{ vars.SENDER_EMAIL }}
+          to-email: ${{ vars.RECIPIENT_EMAIL }}
+          markdown-body: |
+            # The Slim PHP App Has Been Deployed!
+
+            [The latest version of the simple Slim PHP app](${{ vars.WEBSITE_URL }}) has been successfully deployed.
+
+            Sent by a custom GitHub Action using Twilio SendGrid.
