@@ -34,7 +34,8 @@ jobs:
         # - name: Run test suite
         #   run: composer run-script test
 
-      - uses: licenseware/send-email-notification@v1.2.0
+      - name: Send email notification
+        uses: licenseware/send-email-notification@v1.2.0
         with:
           api-key: ${{ secrets.SENDGRID_API_KEY }}
           region: global
